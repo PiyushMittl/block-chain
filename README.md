@@ -182,38 +182,42 @@ public class Utils {
 
 ```
 
-generateHash: this is the main and most import part of the blockchain where we generate the hash. We have lots of implementation available to generate hash but I have used sha256Hex.
+**generateHash:** this is the main and most import part of the blockchain where we generate the hash. We have lots of implementation available to generate hash but I have used sha256Hex.
 
-Hash is the combination of data+previoushash.
+Hash is the combination of **data+previoushash.**
 
 
 We have to add one below dependency to get this implementation though there are lots of api and other methods available on internet we can use any one of them.
 
-Gradle:
+**Gradle:**
+``` json
 compile group: 'commons-codec', name: 'commons-codec', version: '1.11'
+```
 
-Maven:
+**Maven:**
+``` xml
 <dependency>
     <groupId>commons-codec</groupId>
     <artifactId>commons-codec</artifactId>
     <version>1.11</version>
 </dependency>
+```
 
-getPreviousHash:
+**getPreviousHash:**
 previousHash also plays very important role in Blockchain because without previous hash we can not create current hash and we can not link our blocks together.
 
-isBlockChainValid:
+**isBlockChainValid:**
 whenever we add any block in our blockchain here we check if the Blochchain is valid or not by checking the previous and current hash of each block.
 
-validate:
+**validate:**
 we validate the each block by generating currenthash of block by previousblock and data and match it with already present currenthash if both are same then data id not altered else data hash been altered and block chain is invalid.
 
 
 
 
-When Data is altered
+#### When Data is altered
 
-``
+```
 Block Chain is altered at index2
  
  
@@ -234,12 +238,12 @@ hash 80430d2efe27badd4e73dd52e65893f5d8aaba87fb1f186643c12c5d7f830074
 previous hash 043dfeb5ea9cd0337a1d386b5b58bcf850248f84644a0b73bbfc1f762e5fe1ef
 data piyush3 28
 
-``
+```
 
 
 #### No data altered
 
-``
+````
 hash 33bd892bad70ff4fa7ab0f3ec648df8a40608f872337e8a8cfc8b5c8e87e1c49
 previous hash firsthash
 data piyush1 28
@@ -251,6 +255,6 @@ data piyush2 28
 hash 48441e40a3cd6384a2ce09edf3f3acefa4f18d852608fd65bc51ead861411c96
 previous hash 41169e01eb6160f0947640340540c246e5654c2db02223a6a44d24c016337d3a
 data piyush3 28
-``
+````
 
 Please go through [**DataAuthorisation**](http://piyushanandmittal.blogspot.in/2018/03/blog-post_24.html) blog to know more about how to prevent you data to get tempered.
